@@ -1367,3 +1367,9 @@ section {
     height: 50px;
     border-radius: 50%;
 }
+
+.foto-gue {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}

@@ -19,11 +19,16 @@ class PesertaController extends Controller
 
     public function index()
     {
+        $peserta = PesertaModel::latest();
+        
+        if(request('search')) {
+            $peserta->where('nama', 'like', '%' . request('search') . '%');
+        }
+
         $data = [
             'peserta' => $this->PesertaModel->allData(),
         ];
         return view('peserta', $data);
-        
     }
 
     public function detail($nik)
@@ -142,7 +147,7 @@ class PesertaController extends Controller
 
 
         return redirect()->route('peserta')
-        ->with('pesan', 'Data berhasil diperbarui');
+            ->with('pesan', 'Data berhasil diperbarui');
     }
 
     public function delete($nik)
@@ -157,15 +162,17 @@ class PesertaController extends Controller
     //     return $pdf->download('cetak_pdf.pdf');
     // }
 
-    public function cetak_pdf() {
+    public function cetak_pdf()
+    {
         // retreive all records from db
         $data = PesertaModel::all();
-  
+
         // share data to view
-        view()->share('Peserta',$data);
+        view()->share('Peserta', $data);
         $pdf = PDF::loadView('cetak_pdf', $data);
-  
+
         // download PDF file with download method
         return $pdf->download('pdf_file.pdf');
-      }
+    }
 }
+

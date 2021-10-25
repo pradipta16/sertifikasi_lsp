@@ -1,18 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-
-    {{-- Registrasi Section --}}
     <div class="container" style="padding-top: 50px">
-        {{-- <section id="about" class="about"> --}}
         <div class="container" data-aos="fade-up">
-            <h2 class="justify"><b>FORMULIR PENDAFTARAN SERTIFIKASI KOMPETENSI</b></h2>
+            <h2 class="justify"><b>TAMBAH DATA PEGAWAI</b></h2>
             <hr>
             <form action="/peserta/insert" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="col-md-5" style="margin-bottom: 35px">
-                    <label class="form-label">Jadwal Uji Kompetensi</label>
+                    <label class="form-label">Tanggal Masuk</label>
                     <input type="date" name="jadwal" class="form-control" value="{{ old('jadwal') }}">
                     <div class="text-danger">
                         @error('jadwal')
@@ -22,8 +19,6 @@
                 </div>
 
                 <div class="row g-3">
-                    <h2 class="justify"><b>DATA PRIBADI</b></h2>
-                    <hr>
 
                     <div class="col-7">
                         <label class="form-label">NIK</label>
@@ -112,7 +107,6 @@
         </div>
         </form>
     </div>
-    {{-- </section><!-- End Registrasi Section --> --}}
     </div>
 
 @endsection

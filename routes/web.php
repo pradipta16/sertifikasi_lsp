@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/peserta', [PesertaController::class, 'index'])->name('peserta');
+Route::get('/', [PesertaController::class, 'index'])->name('peserta');
 Route::get('/peserta/detail/{nik}', [PesertaController::class, 'detail']);
 Route::get('/peserta/add', [PesertaController::class, 'add']);
 Route::post('/peserta/insert', [PesertaController::class, 'insert']); 
@@ -31,8 +31,8 @@ Route::get('/peserta/delete/{nik}', [PesertaController::class, 'delete']);
 Route::get('/peserta/pdf', [PesertaController::class, 'cetak_pdf']);
 
 
-Route::get('/', function () {
-    return view('login_page');
+Route::get('/peserta', function () {
+    return view('peserta');
 });
 
 Route::get('/main_home', function () {
@@ -44,10 +44,8 @@ Route::get('/daftar', function () {
 });
 
 
-Route::get('/lokasi', function () {
-    return view('lokasi');
+Route::get('/about', function () {
+    return view('about');
 });
 
-Route::get('/skema', function () {
-    return view('skema');
-});
+

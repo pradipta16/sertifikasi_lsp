@@ -4,7 +4,7 @@
 
     <div class="container" style="padding-top: 50px">
         <div class="container" data-aos="fade-up">
-            <h2 class="justify"><b>DETAIL PESERTA SERTIFIKASI</b></h2>
+            <h2 class="justify"><b>DETAIL DATA</b></h2>
             <hr>
 
             <p><img class="foto-peserta" style="width: 200px" src="{{ url('foto_peserta/' . $peserta->foto) }}"></p>

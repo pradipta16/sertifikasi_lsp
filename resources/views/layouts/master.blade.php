@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link rel="icon" href="assets/img/lsp-logo.png">
-    <title>LSP Teknologi Digital</title>
+    <title>BNSP Polinema</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
